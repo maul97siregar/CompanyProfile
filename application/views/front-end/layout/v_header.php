@@ -4,5 +4,5 @@
 
     <a href="<?= base_url('home/#hero'); ?>" class="logo d-flex align-items-center">
       <img src="<?= base_url('assets/img/company/') . $image; ?>" alt="">
-      <span style="font-size: 18px;"><?= $setting->nama_perusahaan; ?></span>
+      <span style="font-size: 28px;"><?= $setting->nama_perusahaan; ?></span>
     </a>

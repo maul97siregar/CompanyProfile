@@ -13,7 +13,7 @@ class client extends CI_Controller
     $this->load->library('form_validation');
     //load model
     $this->load->model('M_kategori');
-    $this->load->model('M_Setting');
+    $this->load->model('M_setting');
     $this->load->model('M_client');
     //load helper
     $this->load->helper('client');
@@ -22,7 +22,7 @@ class client extends CI_Controller
   public function index()
   {
     // LOAD FUNCTION DARI MODEL
-    $setting = $this->M_Setting->daftar();
+    $setting = $this->M_setting->daftar();
     $title = $setting->nama_perusahaan;
     $image = $setting->image;
     $client  = $this->M_client->daftar();
@@ -47,7 +47,7 @@ class client extends CI_Controller
     addclient_validation();
     if ($this->form_validation->run() ==  false) {
       // LOAD FUNCTION DARI MODEL
-      $setting = $this->M_Setting->daftar();
+      $setting = $this->M_setting->daftar();
       $title = $setting->nama_perusahaan;
       $image = $setting->image;
       $kategori  = $this->M_kategori->daftarKategoriclient();
@@ -74,7 +74,7 @@ class client extends CI_Controller
   public function edit($id_client)
   {
     // LOAD FUNCTION DARI MODEL
-    $setting = $this->M_Setting->daftar();
+    $setting = $this->M_setting->daftar();
     $title = $setting->nama_perusahaan;
     $image = $setting->image;
     $kategori   = $this->M_kategori->daftarKategoriclient();

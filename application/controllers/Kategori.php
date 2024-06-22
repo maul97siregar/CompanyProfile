@@ -13,13 +13,13 @@ class Kategori extends CI_Controller
     $this->load->library('form_validation');
     //load model
     $this->load->model('M_kategori');
-    $this->load->model('M_Setting');
+    $this->load->model('M_setting');
   }
 
   public function kategoriBerita()
   {
     // LOAD FUNCTION DARI MODEL
-    $setting = $this->M_Setting->daftar();
+    $setting = $this->M_setting->daftar();
     $title = $setting->nama_perusahaan;
     $image = $setting->image;
     $kategori  = $this->M_kategori->daftarKategoriBerita();
@@ -49,7 +49,7 @@ class Kategori extends CI_Controller
 
     if ($this->form_validation->run() ==  false) {
       // LOAD FUNCTION DARI MODEL
-      $setting = $this->M_Setting->daftar();
+      $setting = $this->M_setting->daftar();
       $title = $setting->nama_perusahaan;
       $image = $setting->image;
       $kategori  = $this->M_kategori->daftarKategoriBerita();
@@ -87,7 +87,7 @@ class Kategori extends CI_Controller
 
     if ($this->form_validation->run() ==  false) {
       // LOAD FUNCTION DARI MODEL
-      $setting = $this->M_Setting->daftar();
+      $setting = $this->M_setting->daftar();
       $title = $setting->nama_perusahaan;
       $image = $setting->image;
       $kategori  = $this->M_kategori->daftarKategoriBerita();
@@ -122,7 +122,7 @@ class Kategori extends CI_Controller
   public function kategoriStaff()
   {
     // LOAD FUNCTION DARI MODEL
-    $setting = $this->M_Setting->daftar();
+    $setting = $this->M_setting->daftar();
     $title = $setting->nama_perusahaan;
     $image = $setting->image;
     $kategori  = $this->M_kategori->daftarKategoriStaff();
@@ -156,7 +156,7 @@ class Kategori extends CI_Controller
 
     if ($this->form_validation->run() ==  false) {
       // LOAD FUNCTION DARI MODEL
-      $setting = $this->M_Setting->daftar();
+      $setting = $this->M_setting->daftar();
       $title = $setting->nama_perusahaan;
       $image = $setting->image;
       $kategori  = $this->M_kategori->daftarKategoriStaff();
@@ -199,7 +199,7 @@ class Kategori extends CI_Controller
     );
 
     if ($this->form_validation->run() ==  false) {
-      $setting = $this->M_Setting->daftar();
+      $setting = $this->M_setting->daftar();
       $title = $setting->nama_perusahaan;
       $image = $setting->image;
       $user = $this->db->get_where('tb_user', ['email' => $this->session->userdata('email')])->row_array();
@@ -246,7 +246,7 @@ class Kategori extends CI_Controller
   public function kategoriClient()
   {
 
-    $setting = $this->M_Setting->daftar();
+    $setting = $this->M_setting->daftar();
     $title = $setting->nama_perusahaan;
     $image = $setting->image;
     $user = $this->db->get_where('tb_user', ['email' => $this->session->userdata('email')])->row_array();
@@ -272,7 +272,7 @@ class Kategori extends CI_Controller
     ]);
 
     if ($this->form_validation->run() ==  false) {
-      $setting = $this->M_Setting->daftar();
+      $setting = $this->M_setting->daftar();
       $title = $setting->nama_perusahaan;
       $image = $setting->image;
       $user = $this->db->get_where('tb_user', ['email' => $this->session->userdata('email')])->row_array();
@@ -307,7 +307,7 @@ class Kategori extends CI_Controller
     );
 
     if ($this->form_validation->run() ==  false) {
-      $setting = $this->M_Setting->daftar();
+      $setting = $this->M_setting->daftar();
       $title = $setting->nama_perusahaan;
       $image = $setting->image;
       $user = $this->db->get_where('tb_user', ['email' => $this->session->userdata('email')])->row_array();

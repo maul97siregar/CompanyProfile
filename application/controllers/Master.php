@@ -13,14 +13,14 @@ class master extends CI_Controller
     $this->load->library('form_validation');
     //load model
     $this->load->model('M_master');
-    $this->load->model('M_Setting');
+    $this->load->model('M_setting');
     //load helper
     $this->load->helper('master');
   }
 
   public function index()
   {
-    $setting = $this->M_Setting->daftar();
+    $setting = $this->M_setting->daftar();
     $title = $setting->nama_perusahaan;
     $image = $setting->image;
     $user = $this->db->get_where('tb_user', ['email' => $this->session->userdata('email')])->row_array();
@@ -42,7 +42,7 @@ class master extends CI_Controller
   { // RULES 
     tambah_validation();
     if ($this->form_validation->run() ==  false) {
-      $setting = $this->M_Setting->daftar();
+      $setting = $this->M_setting->daftar();
       $title = $setting->nama_perusahaan;
       $image = $setting->image;
       $user = $this->db->get_where('tb_user', ['email' => $this->session->userdata('email')])->row_array();
@@ -67,7 +67,7 @@ class master extends CI_Controller
     $master   = $this->M_master->detail($id_master);
     $user = $this->db->get_where('tb_user', ['email' => $this->session->userdata('email')])->row_array();
 
-    $setting = $this->M_Setting->daftar();
+    $setting = $this->M_setting->daftar();
     $title = $setting->nama_perusahaan;
     $image = $setting->image;
 

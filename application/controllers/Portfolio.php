@@ -13,7 +13,7 @@ class portfolio extends CI_Controller
     $this->load->library('form_validation');
     //load model
     $this->load->model('M_layanan');
-    $this->load->model('M_Setting');
+    $this->load->model('M_setting');
     $this->load->model('M_portfolio');
     $this->load->model('M_client');
     //load helper
@@ -22,7 +22,7 @@ class portfolio extends CI_Controller
 
   public function index()
   {
-    $setting = $this->M_Setting->daftar();
+    $setting = $this->M_setting->daftar();
     $title = $setting->nama_perusahaan;
     $image = $setting->image;
     $user = $this->db->get_where('tb_user', ['email' => $this->session->userdata('email')])->row_array();
@@ -44,7 +44,7 @@ class portfolio extends CI_Controller
   {
     tambah_validation();
     if ($this->form_validation->run() ==  false) {
-      $setting = $this->M_Setting->daftar();
+      $setting = $this->M_setting->daftar();
       $title = $setting->nama_perusahaan;
       $image = $setting->image;
       $user = $this->db->get_where('tb_user', ['email' => $this->session->userdata('email')])->row_array();
@@ -69,7 +69,7 @@ class portfolio extends CI_Controller
 
   public function edit($id_portfolio)
   {
-    $setting = $this->M_Setting->daftar();
+    $setting = $this->M_setting->daftar();
     $title = $setting->nama_perusahaan;
     $image = $setting->image;
     $layanan = $this->M_layanan->daftar();

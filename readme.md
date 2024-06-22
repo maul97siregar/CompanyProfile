@@ -16,7 +16,7 @@ of the CodeIgniter User Guide.
 
 ## Screenshoot
 
-#### Front End (Home)
+<!-- #### Front End (Home)
 <div align="center">
     <img src="screenshoot/Company-Profile1.png"</img> 
 </div>
@@ -35,4 +35,4 @@ of the CodeIgniter User Guide.
 <div align="center">
     <img src="screenshoot/Company-Profile-›-Dashboard.png"</img> 
 </div>
-
+ -->

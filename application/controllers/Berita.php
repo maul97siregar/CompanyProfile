@@ -14,7 +14,7 @@ class Berita extends CI_Controller
     //load model
     $this->load->model('M_kategori');
     $this->load->model('M_berita');
-    $this->load->model('M_Setting');
+    $this->load->model('M_setting');
     //load helper
     $this->load->helper('berita');
   }
@@ -22,7 +22,7 @@ class Berita extends CI_Controller
   public function index()
   {
     // load function dari model
-    $setting = $this->M_Setting->daftar();
+    $setting = $this->M_setting->daftar();
     $title = $setting->nama_perusahaan;
     $image = $setting->image;
     $berita  = $this->M_berita->daftar();
@@ -50,7 +50,7 @@ class Berita extends CI_Controller
     // 
     if ($this->form_validation->run() ==  false) {
       // LOAD FUNCTION DARI MODEL
-      $setting = $this->M_Setting->daftar();
+      $setting = $this->M_setting->daftar();
       $title = $setting->nama_perusahaan;
       $image = $setting->image;
       $kategori  = $this->M_kategori->daftarKategoriBerita();
@@ -76,7 +76,7 @@ class Berita extends CI_Controller
   public function edit($id_berita)
   {
     // LOAD FUNCTION DARI MODEL
-    $setting = $this->M_Setting->daftar();
+    $setting = $this->M_setting->daftar();
     $title = $setting->nama_perusahaan;
     $image = $setting->image;
     $kategori   = $this->M_kategori->daftarKategoriBerita();

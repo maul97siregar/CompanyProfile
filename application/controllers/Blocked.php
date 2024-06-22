@@ -11,13 +11,13 @@ class Blocked extends CI_Controller
     is_logged_in();
     //load model
     $this->load->model('M_dashboard');
-    $this->load->model('M_Setting');
+    $this->load->model('M_setting');
   }
 
   public function index()
   {
     // LOAD FUNCTION DARI MODEL
-    $setting = $this->M_Setting->daftar();
+    $setting = $this->M_setting->daftar();
     $title = $setting->nama_perusahaan;
     $image = $setting->image;
 

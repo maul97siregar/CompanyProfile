@@ -463,8 +463,130 @@
 
   </section><!-- End F.A.Q Section -->
 
+  <!--section portfolio -->
+  <section id="portfolio" class="portfolio clients recent-blog-posts">
+  <div class="container" data-aos="fade-up">
+  <header class="section-header">
+        <h2><?= $this->M_dashboard->getTitleById(15)->nama; ?></h2>
+        <?= $this->M_dashboard->getTitleById(15)->isi; ?>
+      </header>
+
+    <!-- <div class="row" data-aos="fade-up" data-aos-delay="100">
+      <div class="col-lg-12 d-flex justify-content-center">
+        <ul id="portfolio-flters">
+          <li data-filter="*" class="filter-active">All</li>
+          <li data-filter=".filter-app">App Development</li>
+          <li data-filter=".filter-card">Web Design</li>
+          <li data-filter=".filter-web">Web Development</li>
+        </ul>
+      </div>
+    </div> -->
+
+    <div class="swiper-container clients-slider2">
+      <div class="swiper-wrapper">
+        <?php foreach ($portfolio as $key => $value) :
+          if ($value->nama_layanan == " App Development" && $value->status_portfolio == "Publish") : ?>
+            <div class="swiper-slide col-lg-4 col-md-6 portfolio-item filter-app">
+              <div class="post-box portfolio-wrap">
+                <div class="post-img">
+                  <img src="<?= base_url('assets/img/portfolio/') . $value->gambar_portfolio; ?>" class="img-fluid" alt="">
+                </div>
+                <div class="portfolio-info">
+                  <h4><?= $value->judul_portfolio; ?></h4>
+                  <p><?= $value->nama_layanan; ?></p>
+                  <div class="portfolio-links">
+                    <a href="<?= base_url('assets/img/portfolio/') . $value->gambar_portfolio; ?>" data-gallery="portfolioGallery" class="portfokio-lightbox" title="<?= $value->judul_portfolio; ?>"><i class="bi bi-plus"></i></a>
+                    <a href="<?= base_url('home/portfoliodetail/' . $value->slug_portfolio); ?>" title="More Details"><i class="bi bi-link"></i></a>
+                  </div>
+                </div>
+                <span class="post-date"><?= date('d-M-Y', strtotime($value->date_cretated)); ?></span>
+                <h3 class="post-title"><?= $value->judul_portfolio; ?></h3>
+                <h4><?= $value->nama_layanan; ?></h4>
+              </div>
+            </div>
+          <?php endif; ?>
+        <?php endforeach; ?>
+
+        <?php foreach ($portfolio as $key => $value) :
+          if ($value->nama_layanan == " Web Development" && $value->status_portfolio == "Publish") : ?>
+            <div class="swiper-slide col-lg-4 col-md-6 portfolio-item filter-web">
+              <div class="post-box portfolio-wrap">
+                <div class="post-img">
+                  <img src="<?= base_url('assets/img/portfolio/') . $value->gambar_portfolio; ?>" class="img-fluid" alt="">
+                </div>
+                <div class="portfolio-info">
+                  <h4><?= $value->judul_portfolio; ?></h4>
+                  <p><?= $value->nama_layanan; ?></p>
+                  <div class="portfolio-links">
+                    <a href="<?= base_url('assets/img/portfolio/') . $value->gambar_portfolio; ?>" data-gallery="portfolioGallery" class="portfokio-lightbox" title="<?= $value->judul_portfolio; ?>"><i class="bi bi-plus"></i></a>
+                    <a href="<?= base_url('home/portfoliodetail/' . $value->slug_portfolio); ?>" title="More Details"><i class="bi bi-link"></i></a>
+                  </div>
+                </div>
+                <span class="post-date"><?= date('d-M-Y', strtotime($value->date_cretated)); ?></span>
+                <h3 class="post-title"><?= $value->judul_portfolio; ?></h3>
+                <h4><?= $value->nama_layanan; ?></h4>
+
+              </div>
+            </div>
+          <?php endif; ?>
+        <?php endforeach; ?>
+
+        <?php foreach ($portfolio as $key => $value) :
+          if ($value->nama_layanan == "Web Design" && $value->status_portfolio == "Publish") : ?>
+            <div class="swiper-slide col-lg-4 col-md-6 portfolio-item filter-card">
+              <div class="post-box portfolio-wrap">
+                <div class="post-img">
+                  <img src="<?= base_url('assets/img/portfolio/') . $value->gambar_portfolio; ?>" class="img-fluid" alt="">
+                </div>
+                <div class="portfolio-info">
+                  <h4><?= $value->judul_portfolio; ?></h4>
+                  <p><?= $value->nama_layanan; ?></p>
+                  <div class="portfolio-links">
+                    <a href="<?= base_url('assets/img/portfolio/') . $value->gambar_portfolio; ?>" data-gallery="portfolioGallery" class="portfokio-lightbox" title="<?= $value->judul_portfolio; ?>"><i class="bi bi-plus"></i></a>
+                    <a href="<?= base_url('home/portfoliodetail/' . $value->slug_portfolio); ?>" title="More Details"><i class="bi bi-link"></i></a>
+                  </div>
+                </div>
+                <span class="post-date"><?= date('d-M-Y', strtotime($value->date_cretated)); ?></span>
+                <h3 class="post-title"><?= $value->judul_portfolio; ?></h3>
+                <h4><?= $value->nama_layanan; ?></h4>
+
+              </div>
+            </div>
+          <?php endif; ?>
+        <?php endforeach; ?>
+      </div>
+
+      <!-- Add Pagination -->
+      <div class="swiper-pagination"></div>
+    </div>
+  </div>
+</section>
+
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+
+<script>
+  var swiper = new Swiper('.clients-slider2', {
+    speed: 400,
+    loop: true,
+    autoplay: {
+      delay: 3000,
+      disableOnInteraction: false
+    },
+    slidesPerView: 'auto',
+    pagination: {
+      el: '.swiper-pagination',
+      type: 'bullets',
+      clickable: true
+    },
+  });
+
+</script>
+
+
+
   <!-- ======= Portfolio Section ======= -->
-  <section id="portfolio" class="portfolio">
+  <!-- <section id="portfolio" class="portfolio">
 
     <div class="container" data-aos="fade-up">
 
@@ -547,7 +669,8 @@
 
     </div>
 
-  </section><!-- End Portfolio Section -->
+  </section> -->
+  <!-- End Portfolio Section -->
 
   <!-- ======= Team Section ======= -->
   <section id="team" class="team">
@@ -615,15 +738,12 @@
   </section><!-- End Clients Section -->
 
   <!-- ======= Recent Blog Posts Section ======= -->
-  <section id="recent-blog-posts" class="recent-blog-posts">
-
+  <!-- <section id="recent-blog-posts" class="recent-blog-posts">
     <div class="container" data-aos="fade-up">
-
       <header class="section-header">
         <h2><?= $this->M_dashboard->getTitleById(18)->nama; ?></h2>
         <?= $this->M_dashboard->getTitleById(18)->isi; ?>
       </header>
-
       <div class="row">
         <?php foreach ($berita as $key => $value) :
           // strip tags to avoid breaking any html
@@ -648,12 +768,10 @@
             </div>
           <?php endif; ?>
         <?php endforeach; ?>
-
       </div>
-
     </div>
-
-  </section><!-- End Recent Blog Posts Section -->
+  </section> -->
+  <!-- End Recent Blog Posts Section -->
 
   <!-- ======= Contact Section ======= -->
   <section id="contact" class="contact">

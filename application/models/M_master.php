@@ -32,24 +32,7 @@ class M_master extends CI_Model
     $slug = url_title($nama, 'dash', true);
     // $status = $this->input->post('status', true);
     $isi = $this->input->post('isi', true);
-    // CEK GAMBAR JIKA ADA GAMBAR AKAN DIUPLOAD 
-    // id   // nama gambar
-    // $uploadImage = $_FILES['image']['name'];
-    // var_dump($uploadImage);
-    // die;
-    // if ($uploadImage) {
-    //   // CEK FILE
-    //   $config['allowed_types'] = 'gif|jpg|png';
-    //   $config['max_size'] = '5048';
-    //   $config['upload_path'] = './assets/img/master/';
-    //   $this->upload->initialize($config);
-    //   // UPLOAD FILE  
-    //   if ($this->upload->do_upload('image')) {
-    //     $gambarmaster = $this->upload->data('file_name');
-    //   } else {
-    //     echo $this->upload->display_errors();
-    //   }
-    // }
+    
     $data = [
       'id_user'       => $user,
       'slug_master'   => htmlspecialchars($slug),
@@ -59,14 +42,31 @@ class M_master extends CI_Model
       'date_created' => date('Y-m-d H:i:s'),
     ];
 
+    $validations = $this->validation($data->nama_master);
+
+    if($validations == null){
+          $this->session->set_flashdata('error', 'Data Master Telah Ada');
+          redirect('master/tambah');
+          return;
+    }
+
     $this->db->insert('tb_master', $data);
     $this->session->set_flashdata('success', 'Berhasil Membuat master');
     redirect('master');
+    
   }
 
 
   public function edit($data)
   {
+    $validations = $this->validation($data->nama_master);
+
+    if($validations == null){
+          $this->session->set_flashdata('error', 'Data Master Telah Ada');
+          redirect('master/tambah');
+          return;
+    }
+    
     $this->db->where('id_master', $data['id_master']);
     $this->db->update('tb_master', $data);
   }
@@ -86,6 +86,15 @@ class M_master extends CI_Model
     $this->db->select('*');
     $this->db->from('tb_master');
     $this->db->where('slug_master', $slug_master);
+    return $this->db->get()->row();
+  }
+
+  public function validation($nama_master)
+  {
+
+    $this->db->select('*');
+    $this->db->from('tb_master');
+    $this->db->where('nama_master', $nama_master);
     return $this->db->get()->row();
   }
 }

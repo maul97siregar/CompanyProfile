@@ -13,7 +13,7 @@ class Staff extends CI_Controller
     $this->load->library('form_validation');
     //load model
     $this->load->model('M_kategori');
-    $this->load->model('M_Setting');
+    $this->load->model('M_setting');
     $this->load->model('M_staff');
     //load helper
     $this->load->helper('staff');
@@ -21,7 +21,7 @@ class Staff extends CI_Controller
 
   public function index()
   {
-    $setting = $this->M_Setting->daftar();
+    $setting = $this->M_setting->daftar();
     $title = $setting->nama_perusahaan;
     $image = $setting->image;
     $user = $this->db->get_where('tb_user', ['email' => $this->session->userdata('email')])->row_array();
@@ -43,7 +43,7 @@ class Staff extends CI_Controller
   {
     addStaff_validation();
     if ($this->form_validation->run() ==  false) {
-      $setting = $this->M_Setting->daftar();
+      $setting = $this->M_setting->daftar();
       $title = $setting->nama_perusahaan;
       $image = $setting->image;
       $user = $this->db->get_where('tb_user', ['email' => $this->session->userdata('email')])->row_array();
@@ -71,7 +71,7 @@ class Staff extends CI_Controller
 
   public function edit($id_staff)
   {
-    $setting = $this->M_Setting->daftar();
+    $setting = $this->M_setting->daftar();
     $title = $setting->nama_perusahaan;
     $image = $setting->image;
     $kategori   = $this->M_kategori->daftarKategoriStaff();
@@ -169,7 +169,7 @@ class Staff extends CI_Controller
 
   public function detail($id_staff)
   {
-    $setting = $this->M_Setting->daftar();
+    $setting = $this->M_setting->daftar();
     $title = $setting->nama_perusahaan;
     $image = $setting->image;
     $kategori   = $this->M_kategori->daftarKategoriStaff();
