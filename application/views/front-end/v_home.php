@@ -499,7 +499,7 @@
                     <a href="<?= base_url('home/portfoliodetail/' . $value->slug_portfolio); ?>" title="More Details"><i class="bi bi-link"></i></a>
                   </div>
                 </div>
-                <span class="post-date"><?= date('d-M-Y', strtotime($value->date_cretated)); ?></span>
+                <span class="post-date"><?= date('d-M-Y', strtotime($value->date_project)); ?></span>
                 <h3 class="post-title"><?= $value->judul_portfolio; ?></h3>
                 <h4><?= $value->nama_layanan; ?></h4>
               </div>
@@ -522,7 +522,7 @@
                     <a href="<?= base_url('home/portfoliodetail/' . $value->slug_portfolio); ?>" title="More Details"><i class="bi bi-link"></i></a>
                   </div>
                 </div>
-                <span class="post-date"><?= date('d-M-Y', strtotime($value->date_cretated)); ?></span>
+                <span class="post-date"><?= date('d-M-Y', strtotime($value->date_project)); ?></span>
                 <h3 class="post-title"><?= $value->judul_portfolio; ?></h3>
                 <h4><?= $value->nama_layanan; ?></h4>
 
@@ -546,7 +546,7 @@
                     <a href="<?= base_url('home/portfoliodetail/' . $value->slug_portfolio); ?>" title="More Details"><i class="bi bi-link"></i></a>
                   </div>
                 </div>
-                <span class="post-date"><?= date('d-M-Y', strtotime($value->date_cretated)); ?></span>
+                <span class="post-date"><?= date('d-M-Y', strtotime($value->date_project)); ?></span>
                 <h3 class="post-title"><?= $value->judul_portfolio; ?></h3>
                 <h4><?= $value->nama_layanan; ?></h4>
 

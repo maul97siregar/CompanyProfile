@@ -14,25 +14,5 @@ Aplikasi ini berguna untuk profile perusahaan
 Please see the `installation section <https://codeigniter.com/user_guide/installation/index.html>`_
 of the CodeIgniter User Guide.
 
-## Screenshoot
-
-<!-- #### Front End (Home)
-<div align="center">
-    <img src="screenshoot/Company-Profile1.png"</img> 
-</div>
-
-#### Front End (Berita/Artikel)
-<div align="center">
-    <img src="screenshoot/Company-Profile2.png"</img> 
-</div>
-
-#### Back End (Login)
-<div align="center">
-    <img src="screenshoot/Company-Profile-›-Login.png"</img> 
-</div>
-
-#### Back End (Dashboard)
-<div align="center">
-    <img src="screenshoot/Company-Profile-›-Dashboard.png"</img> 
-</div>
- -->
+## Link Xampp
+Please download xampp env 'https://drive.google.com/file/d/1rmCAalS7rmH0LiZ-gRw5CqOuj5GWAhly/view?usp=sharing'
