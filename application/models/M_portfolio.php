@@ -11,7 +11,7 @@ class M_portfolio extends CI_Model
     $this->db->join('tb_user', 'tb_user.id_user = tb_portfolio.id_user', 'left');
     $this->db->join('tb_client', 'tb_client.id_client = tb_portfolio.id_client', 'left');
     $this->db->join('tb_layanan', 'tb_layanan.judul_layanan = tb_portfolio.nama_layanan', 'left');
-    $this->db->order_by('id_portfolio', 'desc');
+    $this->db->order_by('date_project', 'desc');
     return $this->db->get()->result();
   }
 
