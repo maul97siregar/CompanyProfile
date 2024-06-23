@@ -52,7 +52,7 @@
               $date_project = $date->format('d F, Y');
               ?>
               <li><strong>Project date</strong>: <?= $date_project; ?></li>
-              <li><strong>Project URL</strong>: <a href="#"><?= $portfolio->website_portfolio; ?></a></li>
+              <li><strong>Project URL</strong>: <a href="<?= $portfolio->website_portfolio; ?>" target="blank_"><?= $portfolio->website_portfolio; ?></a></li>
               <li><strong>Testimoni</strong>: <?= $portfolio->testimoni; ?></li>
             </ul>
           </div>
